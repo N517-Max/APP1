@@ -1,0 +1,22 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-medical-transport",
+      "description": "Professional medical transport van",
+      "imageUrl": "https://picsum.photos/seed/transport/1200/800",
+      "imageHint": "medical van"
+    },
+    {
+      "id": "avatar-driver",
+      "description": "Professional medical transport driver",
+      "imageUrl": "https://picsum.photos/seed/driver/200/200",
+      "imageHint": "professional driver"
+    },
+    {
+      "id": "avatar-patient",
+      "description": "Patient user profile",
+      "imageUrl": "https://picsum.photos/seed/patient/200/200",
+      "imageHint": "happy patient"
+    }
+  ]
+}

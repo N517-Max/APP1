@@ -1,0 +1,54 @@
+
+{
+  "entities": {
+    "TransportRequest": {
+      "title": "Transport Request",
+      "description": "A request for medical transport.",
+      "type": "object",
+      "properties": {
+        "patientName": { "type": "string" },
+        "patientPhone": { "type": "string" },
+        "medicalId": { "type": "string" },
+        "pickup": { "type": "string" },
+        "dropoff": { "type": "string" },
+        "appointmentTime": { "type": "string", "format": "date-time" },
+        "tripType": { "type": "string", "enum": ["oneway", "roundtrip"] },
+        "appointmentType": { "type": "string", "enum": ["Dialysis", "Behavioral Health", "Specialist", "Other"] },
+        "bufferTime": { "type": "number" },
+        "specialNeeds": { "type": "string" },
+        "driverName": { "type": "string" },
+        "status": { "type": "string", "enum": ["processing", "assigned", "completed", "canceled"] },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["patientName", "pickup", "dropoff", "appointmentTime"]
+    },
+    "Driver": {
+      "title": "Driver",
+      "description": "A medical transport driver.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "vehicle": { "type": "string" },
+        "isAvailable": { "type": "boolean" },
+        "certifications": { "type": "array", "items": { "type": "string" } },
+        "lat": { "type": "number" },
+        "lng": { "type": "number" },
+        "status": { "type": "string" },
+        "lastUpdate": { "type": "number" }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["google.com"]
+  },
+  "firestore": {
+    "/requests/{requestId}": {
+      "schema": { "$ref": "#/backend/entities/TransportRequest" },
+      "description": "Collection of transport requests."
+    },
+    "/drivers/{driverId}": {
+      "schema": { "$ref": "#/backend/entities/Driver" },
+      "description": "Collection of driver profiles."
+    }
+  }
+}

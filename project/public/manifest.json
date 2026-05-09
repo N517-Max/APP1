@@ -1,0 +1,18 @@
+
+{
+  "name": "Falls Medride Dispatch System",
+  "short_name": "Falls Medride",
+  "description": "Professional medical transport dispatch and tracking system.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2273c3",
+  "icons": [
+    {
+      "src": "https://picsum.photos/seed/medride-icon/512/512",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
